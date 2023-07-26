@@ -1,0 +1,12 @@
+/Release
+/Debug
+/build
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles
+.ninja_deps
+.ninja_log
+build.ninja
+rules.ninja
+!.cproject
+!.project
