@@ -22,15 +22,16 @@ endif(UNIX)
 
 set(SOURCE
 main.cpp
+serialstream.cpp
 )
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
 )
 
-find_package(Boost COMPONENTS system REQUIRED)
+find_package(Boost COMPONENTS date_time system REQUIRED)
 if(NOT Boost_FOUND)
-	message(SEND_ERROR "Failed to find boost::{system}")
+	message(SEND_ERROR "Failed to find boost::{date_time|system}")
 	return()
 else()
 	include_directories(${Boost_INCLUDE_DIRS})
@@ -46,4 +47,4 @@ endif(CCACHE_FOUND)
 add_executable(${PROJECT_NAME} ${SOURCE})
 
 target_link_libraries(${PROJECT_NAME}
-                       ${Boost_LIBRARIES})
+                      ${Boost_LIBRARIES})
